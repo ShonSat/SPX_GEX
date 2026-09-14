@@ -628,9 +628,8 @@ ax.view_init(elev=20, azim=45)
 
 plt.tight_layout()
 #plt.show()
-plt.savefig("images/K_means_clustering_statizstics.png", bbox_inches='tight')
+plt.savefig("images/K_means_clustering_statistics.png", bbox_inches='tight')
 plt.close()
 
 
 
-################## Data cleaning for Decision Tree #################################
