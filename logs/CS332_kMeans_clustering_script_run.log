@@ -1,0 +1,173 @@
+/home/shon/PycharmProjects/SPX_GEX/.venv/bin/python /home/shon/PycharmProjects/SPX_GEX/CamarlinghiShonchalay_SPX_GEX_Decision_Tree.py 
+Raw data before processing: 
+
+Cleaned Column Information:
+   Data Type  NaN Count         Example values
+0        str          0      [Mon Sep 14 2026]
+1        str          0  [SPXW260914C03000000]
+2    float64          0              [4661.95]
+3    float64          0              [66.8499]
+4      int64          0                    [0]
+5      int64          0                    [0]
+6      int64          0                    [1]
+7    float64          0               [3.9297]
+8    float64          0               [0.9999]
+9    float64          0                  [0.0]
+10     int64          0                    [1]
+11   float64          0               [3000.0]
+12       str          0  [SPXW260914P03000000]
+13   float64          0                  [0.1]
+14   float64          0                  [0.0]
+15     int64          0                    [0]
+16     int64          0                    [0]
+17     int64          0                    [0]
+18   float64          0               [2.7962]
+19   float64          0                  [0.0]
+20   float64          0                  [0.0]
+21     int64          0                    [3]
+
+
+Shape of cleaned dataframe:  (4101, 22)
+                0                    1          2   ...     19     20   21
+0  Mon Sep 14 2026  SPXW260914C03000000 4,661.9500  ... 0.0000 0.0000    3
+1  Mon Sep 14 2026  SPXW260914C03200000     0.0000  ... 0.0000 0.0000    0
+2  Mon Sep 14 2026  SPXW260914C03400000     0.0000  ... 0.0000 0.0000    1
+3  Mon Sep 14 2026  SPXW260914C03600000     0.0000  ... 0.0000 0.0000    4
+4  Mon Sep 14 2026  SPXW260914C03800000     0.0000  ... 0.0000 0.0000   62
+5  Mon Sep 14 2026  SPXW260914C04000000     0.0000  ... 0.0000 0.0000   37
+6  Mon Sep 14 2026  SPXW260914C04200000     0.0000  ... 0.0000 0.0000    5
+7  Mon Sep 14 2026  SPXW260914C04400000     0.0000  ... 0.0000 0.0000    6
+8  Mon Sep 14 2026  SPXW260914C04600000     0.0000  ... 0.0000 0.0000  557
+9  Mon Sep 14 2026  SPXW260914C04800000     0.0000  ... 0.0000 0.0000   47
+
+[10 rows x 22 columns]
+
+Cleaned Column Information:
+                     Data Type  NaN Count         Example values
+ExpirationDate  datetime64[us]          0  [2026-09-14 16:00:00]
+Calls                      str          0  [SPXW260914C03000000]
+CallLastSale           float64          0              [4661.95]
+CallNet                float64          0              [66.8499]
+CallBid                  int64          0                    [0]
+CallAsk                  int64          0                    [0]
+CallVol                  int64          0                    [1]
+CallIV                 float64          0               [3.9297]
+CallDelta              float64          0               [0.9999]
+CallGamma              float64          0                  [0.0]
+CallOpenInt            float64          0                  [1.0]
+StrikePrice            float64          0               [3000.0]
+Puts                       str          0  [SPXW260914P03000000]
+PutLastSale            float64          0                  [0.1]
+PutNet                 float64          0                  [0.0]
+PutBid                   int64          0                    [0]
+PutAsk                   int64          0                    [0]
+PutVol                   int64          0                    [0]
+PutIV                  float64          0               [2.7962]
+PutDelta               float64          0                  [0.0]
+PutGamma               float64          0                  [0.0]
+PutOpenInt             float64          0                  [3.0]
+
+
+Shape of cleaned dataframe:  (4101, 22)
+       ExpirationDate                Calls  ...  PutGamma  PutOpenInt
+0 2026-09-14 16:00:00  SPXW260914C03000000  ...    0.0000      3.0000
+1 2026-09-14 16:00:00  SPXW260914C03200000  ...    0.0000      0.0000
+2 2026-09-14 16:00:00  SPXW260914C03400000  ...    0.0000      1.0000
+3 2026-09-14 16:00:00  SPXW260914C03600000  ...    0.0000      4.0000
+4 2026-09-14 16:00:00  SPXW260914C03800000  ...    0.0000     62.0000
+5 2026-09-14 16:00:00  SPXW260914C04000000  ...    0.0000     37.0000
+6 2026-09-14 16:00:00  SPXW260914C04200000  ...    0.0000      5.0000
+7 2026-09-14 16:00:00  SPXW260914C04400000  ...    0.0000      6.0000
+8 2026-09-14 16:00:00  SPXW260914C04600000  ...    0.0000    557.0000
+9 2026-09-14 16:00:00  SPXW260914C04800000  ...    0.0000     47.0000
+
+[10 rows x 22 columns]
+Saved cleaned data in:  ./archive/spx_quotedata_reformatted_GEX.csv
+
+
+
+###############################################################################################
+############################    UNLABELED QUANTITATIVE DATA FOR K-MEANS  ##################################
+Original shape before cleaning:  (4101, 10)
+Shape after removing missing values:  (4101, 10)
+Final shape for K-means dataset:  (4101, 10)
+
+Basic statistics of quantitative data for K-means:
+       StrikePrice     CallIV      PutIV  ...  CallOpenInt   PutOpenInt  daysTillExp
+count   4,101.0000 4,101.0000 4,101.0000  ...   4,101.0000   4,101.0000   4,101.0000
+mean    7,181.7922     0.3410     0.2852  ...     830.4387   1,213.7047       1.0229
+std     1,175.8652     0.4594     0.3911  ...   8,201.9469   8,738.5512       0.0143
+min       200.0000     0.0000     0.0000  ...       0.0000       0.0000       1.0000
+25%     6,840.0000     0.1238     0.0990  ...       0.0000       6.0000       1.0153
+50%     7,405.0000     0.1944     0.1744  ...      15.0000     108.0000       1.0191
+75%     7,775.0000     0.3687     0.3333  ...     174.0000     475.0000       1.0344
+max    13,000.0000     8.4679     7.2840  ... 367,249.0000 382,647.0000       1.0458
+
+[8 rows x 10 columns]
+
+First 10 rows of unlabeled quantitative data for K-means:
+   StrikePrice  CallIV  PutIV  ...  CallOpenInt  PutOpenInt  daysTillExp
+0   3,000.0000  3.9297 2.7962  ...       1.0000      3.0000       1.0000
+1   3,200.0000  3.6781 2.6094  ...       0.0000      0.0000       1.0000
+2   3,400.0000  3.4328 2.4340  ...       0.0000      1.0000       1.0000
+3   3,600.0000  3.2099 2.2685  ...       0.0000      4.0000       1.0000
+4   3,800.0000  2.9909 2.1118  ...       0.0000     62.0000       1.0000
+5   4,000.0000  2.7831 1.9631  ...       0.0000     37.0000       1.0000
+6   4,200.0000  2.5922 1.8214  ...       0.0000      5.0000       1.0000
+7   4,400.0000  2.4031 1.6861  ...       0.0000      6.0000       1.0000
+8   4,600.0000  2.2282 1.5566  ...       0.0000    557.0000       1.0000
+9   4,800.0000  2.0543 1.4324  ...       1.0000     47.0000       1.0000
+
+[10 rows x 10 columns]
+
+Saved quantitative data for K-means to: ./archive/spx_quantitative_kmeans_data.csv
+Sampling 1000 points for pairplot visualization...
+
+Cleaned Column Information:
+            Data Type  NaN Count Example values
+StrikePrice   float64          0       [3000.0]
+CallIV        float64          0       [3.9297]
+PutIV         float64          0       [2.7962]
+CallDelta     float64          0       [0.9999]
+PutDelta      float64          0          [0.0]
+CallGamma     float64          0          [0.0]
+PutGamma      float64          0          [0.0]
+CallOpenInt   float64          0          [1.0]
+PutOpenInt    float64          0          [3.0]
+daysTillExp   float64          0          [1.0]
+
+
+Shape of cleaned dataframe:  (4101, 10)
+   StrikePrice  CallIV  PutIV  ...  CallOpenInt  PutOpenInt  daysTillExp
+0   3,000.0000  3.9297 2.7962  ...       1.0000      3.0000       1.0000
+1   3,200.0000  3.6781 2.6094  ...       0.0000      0.0000       1.0000
+2   3,400.0000  3.4328 2.4340  ...       0.0000      1.0000       1.0000
+3   3,600.0000  3.2099 2.2685  ...       0.0000      4.0000       1.0000
+4   3,800.0000  2.9909 2.1118  ...       0.0000     62.0000       1.0000
+5   4,000.0000  2.7831 1.9631  ...       0.0000     37.0000       1.0000
+6   4,200.0000  2.5922 1.8214  ...       0.0000      5.0000       1.0000
+7   4,400.0000  2.4031 1.6861  ...       0.0000      6.0000       1.0000
+8   4,600.0000  2.2282 1.5566  ...       0.0000    557.0000       1.0000
+9   4,800.0000  2.0543 1.4324  ...       1.0000     47.0000       1.0000
+
+[10 rows x 10 columns]
+
+Quantitative data preparation for K-means completed successfully!
+This dataset contains only numerical features suitable for clustering analysis.
+Cluster Centers (Original Scale):
+           StrikePrice   PutOpenInt  PutGamma
+Cluster 0   7,536.1957     635.1526    0.0003
+Cluster 1   7,000.0000 275,982.0000    0.0001
+Cluster 2   7,656.4588   1,275.6076    0.0024
+Cluster 3   5,133.5571   2,158.0602    0.0000
+
+Cluster Sizes:
+Cluster
+0    2575
+1       3
+2     874
+3     649
+Name: count, dtype: int64
+
+Process finished with exit code 0
+
