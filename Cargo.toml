@@ -1,0 +1,13 @@
+[package]
+name = "spx_gex_engine"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+#pyo3 = { version = "0.23", features = ["extension-module"] }
+# Tokio is the async runtime engine needed for network operations
+tokio = { version = "1", features = ["full"] }
+# Reqwest handles making the HTTP requests asynchronously
+reqwest = { version = "0.12", features = ["json"] }
+# Serde parses the incoming API JSON data into type-safe Rust structures
+serde = { version = "1.0", features = ["derive"] }

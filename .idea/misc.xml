@@ -3,4 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.12 (SPX_GEX)" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="~/RustroverProjects/SPX_GEX/.venv" project-jdk-type="Python SDK" />
 </project>
